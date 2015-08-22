@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>gegray's URL expander</title>
+	</head>
+	<body>
+		{% if user.is_authenticated %}
+			<p>Hello {{ user.username }}<small>(<a href="{% url "django.contrib.auth.views.logout" %}">Log out</a>)</small></p>
+			<a href="{% url "url_add" %}">Expand New URL</a>
+
+			<br>
+		{% else %}
+			<a href="{% url "django.contrib.auth.views.login" %}">Log in</a>
+		{% endif %}
+
+		<h2><a href="/urlexpander">gegray's URL Expander</a></h2>
+		<br>
+
+		{% block content %}
+		{% endblock %}
+
+	</body>
+</html>

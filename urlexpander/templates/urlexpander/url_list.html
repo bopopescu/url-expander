@@ -1,0 +1,8 @@
+{% extends "urlexpander/base.html" %}
+
+{% block content %}
+	<h4>Expanded URLs: (log in to see more info, otherwise links won't work. UX win!)</h4>
+	{% for url in urls %}
+		<h5><a href="{% url "url_detail" pk=url.pk %}">{{ url.original }}</a></h5>
+	{% endfor %}
+{% endblock content %}
